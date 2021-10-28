@@ -1,7 +1,19 @@
+//Library Imports
+import { useState } from "react";
+
+// Component Imports
+import Header from "./components/Header";
+import OMS from "./components/OMS";
+import HeroSection from "./components/HeroSection";
+
 function App() {
+  //State Values
+  const [userSignedIn, setUserSignedIn] = useState(false);
+
   return (
-    <div className="App">
-      <h1>Orders Data Visualisation Application</h1>
+    <div className="app__container">
+      <Header />
+      {userSignedIn ? <OMS /> : <HeroSection />}
     </div>
   );
 }
