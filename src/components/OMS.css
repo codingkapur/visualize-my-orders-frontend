@@ -9,9 +9,10 @@
   grid-template-columns: 1fr 1fr;
   border: 1px solid #123;
   align-items: center;
+  padding: 0.25rem;
 }
 .toprow__searchbar--container {
-  border: 1px solid #123;
+  /* border: 1px solid #123; */
   padding: 0.25rem 0.5rem;
   display: flex;
   align-items: center;
@@ -49,7 +50,8 @@
 
 .toprow__operations--container {
   display: flex;
-  border: 1px solid #123;
+  /* border: 1px solid #123; */
+  justify-content: flex-end;
 }
 .operations-btn {
   border: 1px solid rgba(17, 34, 51, 0.26);

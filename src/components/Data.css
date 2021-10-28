@@ -1,0 +1,42 @@
+.data__container {
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+}
+.data__container--right {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-x: scroll;
+}
+.heading__row--left,
+.data__row--left {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+  border-right: 1px solid #123;
+  border-bottom: 1px solid #123;
+}
+.heading__row--right,
+.data__row--right {
+  display: grid;
+  grid-template-columns: repeat(5, 200px) 400px 200px;
+  align-items: center;
+  border-bottom: 1px solid #123;
+}
+.heading__row--left, .heading__row--right {
+    background-color: rgba(192, 192, 192, 0.364);
+    font-weight: 700;
+}
+.user--data__item {
+  text-align: center;
+  padding: 1rem 0;
+  border-right: 1px solid #123;
+  overflow-y: scroll;
+}
+.input__checkbox {
+  margin: 0 auto;
+  border-right: 1px solid #123;
+}
+.row__user--name {
+  text-align: start;
+  padding-left: 2rem;
+}
