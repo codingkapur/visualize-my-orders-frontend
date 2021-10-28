@@ -1,0 +1,62 @@
+.oms-section__container {
+  height: 90vh;
+  background-color: #fff;
+}
+.toprow__container {
+  /* height: 10vh; */
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #123;
+  align-items: center;
+}
+.toprow__searchbar--container {
+  border: 1px solid #123;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+
+}
+.searchbar__form {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+.search__icon {
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.2rem;
+}
+.search__icon:hover {
+  transform: scale(1.1);
+}
+.searchbar__input {
+  padding: 0.5rem;
+  border: none;
+  width: 0%;
+  transition: 0.4s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.364);
+  opacity: 0;
+}
+
+.searchbar__input.active {
+  padding: 0.5rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.364);
+  opacity: 1;
+  outline: none;
+}
+
+.toprow__operations--container {
+  display: flex;
+  border: 1px solid #123;
+}
+.operations-btn {
+  border: 1px solid rgba(17, 34, 51, 0.26);
+  font-weight: 400;
+  width: 65px;
+  text-align: center;
+  padding: 0.25;
+  color: rgba(17, 34, 51, 0.796);
+  background-color: rgba(255, 255, 255, 0.213);
+}

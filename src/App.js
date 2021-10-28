@@ -8,7 +8,7 @@ import HeroSection from "./components/HeroSection";
 
 function App() {
   //State Values
-  const [userSignedIn, setUserSignedIn] = useState(false);
+  const [userSignedIn, setUserSignedIn] = useState(true);
 
   const onSignInClick = () => {
     setUserSignedIn(true);
@@ -19,7 +19,11 @@ function App() {
 
   return (
     <div className="app__container">
-      <Header userSignedIn={userSignedIn} onSignInClick ={onSignInClick} onSignOutClick={onSignOutClick}/>
+      <Header
+        userSignedIn={userSignedIn}
+        onSignInClick={onSignInClick}
+        onSignOutClick={onSignOutClick}
+      />
       {userSignedIn ? <OMS /> : <HeroSection />}
     </div>
   );
