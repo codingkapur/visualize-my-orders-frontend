@@ -1,0 +1,35 @@
+.hero-section__container {
+    height: 90vh;
+}
+.overlay {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.556);
+
+}
+.hero__text--container {
+    /* border: 1px solid #fff; */
+    width: 90%;
+    /* max-width: 750px; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left:7rem; 
+    color: #fff;
+    align-items: flex-start;
+}
+.hero__text--title {
+    text-transform: uppercase;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.hero__text--subtitle {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.hero__text--link {
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+}

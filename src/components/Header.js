@@ -1,8 +1,8 @@
 import React from "react";
 
-import './Header.css'
+import "./Header.css";
 
-const Header = ({ userSignedIn }) => {
+const Header = ({ userSignedIn, onSignInClick, onSignOutClick }) => {
   return (
     <header className="header__container">
       <p className="logo">Orders Management System</p>
@@ -11,10 +11,14 @@ const Header = ({ userSignedIn }) => {
       </div>
       <div className="header__buttons--container">
         {userSignedIn ? (
-          <p className="header__btn sign-out__btn btn">Sign Out</p>
+          <p className="header__btn sign-out__btn btn" onClick={onSignOutClick}>
+            Sign Out
+          </p>
         ) : (
           <React.Fragment>
-            <p className="header__btn sign-in__btn btn">Sign In</p>
+            <p className="header__btn sign-in__btn btn" onClick={onSignInClick}>
+              Sign In
+            </p>
             <p className="header__btn sign-up__btn btn">Sign Up</p>
           </React.Fragment>
         )}

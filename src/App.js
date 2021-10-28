@@ -10,9 +10,16 @@ function App() {
   //State Values
   const [userSignedIn, setUserSignedIn] = useState(false);
 
+  const onSignInClick = () => {
+    setUserSignedIn(true);
+  };
+  const onSignOutClick = () => {
+    setUserSignedIn(false);
+  };
+
   return (
     <div className="app__container">
-      <Header userSignedIn={userSignedIn}/>
+      <Header userSignedIn={userSignedIn} onSignInClick ={onSignInClick} onSignOutClick={onSignOutClick}/>
       {userSignedIn ? <OMS /> : <HeroSection />}
     </div>
   );

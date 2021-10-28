@@ -19,4 +19,8 @@ body {
     rgb(255, 255, 255) 0%,
     rgb(153, 202, 255) 100%
   );
+  background-image: url("./static/hero-section-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
+

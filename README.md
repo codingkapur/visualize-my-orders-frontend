@@ -12,3 +12,5 @@ Manage your orders with ease, saving time and energy to focus on providing the b
 5. Delete Orders.
 6. Print? Maybe
 
+------------------------------------------------------------------------------
+1. Seperation of css files per component.
