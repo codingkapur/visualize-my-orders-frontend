@@ -15,11 +15,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  /* border: 1px solid #123; */
+
 }
 .searchbar__form {
   display: grid;
-  grid-template-columns: 1.5fr 4fr;
+  grid-template-columns: 1.5fr 5fr;
   align-items: center;
+  /* border: 1px solid #123; */
+  width: 45%;
 }
 .search__icon {
   cursor: pointer;
@@ -34,8 +38,8 @@
   padding: 0.5rem;
   border: none;
   width: 0%;
-  transition: 0.4s ease;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.364);
+  transition: 0.4s ease-in;
+  border-bottom: 1px solid rgba(61, 61, 63, 0.364);
   opacity: 0;
 }
 

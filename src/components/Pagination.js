@@ -15,8 +15,9 @@ const Pagination = ({
         className="arrow__icon"
         onClick={() => handleLeftClick()}
       />
-      <p className="pagination__btn">{page}</p>
-      <p>of {totalPages}</p>
+      <p className="pagination__btn current-page__btn">{page}</p>
+      <p>of</p>
+      <p className="pagination__btn">{totalPages}</p>
       <FiChevronRight
         className="arrow__icon"
         onClick={() => handleRightClick()}
