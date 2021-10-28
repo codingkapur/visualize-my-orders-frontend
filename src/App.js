@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="app__container">
-      <Header />
+      <Header userSignedIn={userSignedIn}/>
       {userSignedIn ? <OMS /> : <HeroSection />}
     </div>
   );
