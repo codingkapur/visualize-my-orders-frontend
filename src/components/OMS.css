@@ -11,21 +11,21 @@
   padding: 0.25rem;
 }
 .toprow__searchbar--container {
-  /* border: 1px solid #123; */
   padding: 0.25rem 0.5rem;
   display: flex;
   align-items: center;
-
+  justify-content: flex-start;
 }
 .searchbar__form {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.5fr 4fr;
   align-items: center;
-  width: 40%;
 }
 .search__icon {
   cursor: pointer;
   transition: 0.3s;
   font-size: 1.2rem;
+  
 }
 .search__icon:hover {
   transform: scale(1.1);
