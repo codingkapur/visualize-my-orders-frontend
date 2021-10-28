@@ -1,6 +1,8 @@
 .data__container {
   display: grid;
   grid-template-columns: 2fr 7fr;
+  grid-template-rows: auto 1fr;
+  height: 100%;
 }
 .data__container--right {
   display: grid;
@@ -39,4 +41,15 @@
 .row__user--name {
   text-align: start;
   padding-left: 2rem;
+}
+
+.pagination__container {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row: auto;
+  border: 1px solid #123;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

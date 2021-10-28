@@ -1,9 +1,26 @@
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import "./Pagination.css";
+import { ORDERS_PER_PAGE } from "../utils/constants";
 
-const Pagination = () => {
+const Pagination = ({
+  ordersList,
+  totalPages,
+  page,
+  handleLeftClick,
+  handleRightClick,
+}) => {
   return (
     <div className="pagination__container">
-      <h3>Pagination</h3>
+      <FiChevronLeft
+        className="arrow__icon"
+        onClick={() => handleLeftClick()}
+      />
+      <p className="pagination__btn">{page}</p>
+      <p>of {totalPages}</p>
+      <FiChevronRight
+        className="arrow__icon"
+        onClick={() => handleRightClick()}
+      />
     </div>
   );
 };
