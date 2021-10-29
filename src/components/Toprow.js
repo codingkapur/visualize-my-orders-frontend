@@ -1,8 +1,10 @@
 //Library imports
-import { BsSearch, BsThreeDots } from "react-icons/bs";
+import { BsSearch} from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 
-const Toprow = ({ searchState, handleSearchClick }) => {
+const Toprow = ({ searchState, handleSearchClick, toggleForm }) => {
+
+
   return (
     <div className="toprow__container">
       <div className="toprow__searchbar--container">
@@ -24,7 +26,7 @@ const Toprow = ({ searchState, handleSearchClick }) => {
         </form>
       </div>
       <div className="toprow__operations--container">
-        <p className="btn add-order-btn operations-btn">Add</p>
+        <p className="btn add-order-btn operations-btn" onClick={toggleForm}>Add</p>
         <p className="btn edit-order-btn operations-btn">Edit</p>
         <p className="btn delete-order-btn operations-btn">Delete</p>
         <p className="btn sort-orders-btn operations-btn">Sort</p>

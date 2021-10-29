@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+import Modal from './Modal';
 import Leftrow from "./Leftrow";
 import Rightrow from "./Rightrow";
 import Pagination from "./Pagination";
@@ -7,7 +8,7 @@ import Pagination from "./Pagination";
 import "./Data.css";
 import { ORDERS_PER_PAGE } from "../utils/constants";
 
-const Data = ({ ordersList, loading }) => {
+const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm}) => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
@@ -19,7 +20,7 @@ const Data = ({ ordersList, loading }) => {
 
   useEffect(() => {
     setTotalPages(Math.ceil(ordersList.length / ORDERS_PER_PAGE));
-  });
+  },[totalPages, ordersList]);
 
   const handleLeftClick = () => {
     if (page > 1) {
@@ -31,8 +32,10 @@ const Data = ({ ordersList, loading }) => {
       setPage(page + 1);
     }
   };
+  
   return (
     <div className="data__container">
+      {showForm? <Modal handleCancelClick={handleCancelClick} addOrder={addOrder} closeForm={closeForm}/> :''}
       <div className="data__container--left">
         <div className="heading__row--left">
           <input type="checkbox" className="input__checkbox user--data__item" />

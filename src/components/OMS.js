@@ -1,5 +1,5 @@
 //Library Imports
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 //Component Imports
 import "./OMS.css";
@@ -10,7 +10,7 @@ const OMS = () => {
   const [searchState, setSearchState] = useState(false);
   const [ordersList, setOrdersList] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const [showForm, setShowForm] = useState(false);
   //FUNCTIONS
   //Load Orders
   useEffect(() => {
@@ -36,6 +36,34 @@ const OMS = () => {
   const handleSearchClick = () => {
     setSearchState(!searchState);
   };
+
+  //Toggle Add Order Form
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+  const handleCancelClick = () => {
+    setShowForm(false);
+  };
+
+  const closeForm = (bool) => {
+    setShowForm(bool);
+  };
+  const addOrder = async (order) => {
+    try {
+      const res = await fetch("http://localhost:5000/orders", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(order),
+      });
+      const data = await res.json();
+      setOrdersList([...ordersList, data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <main className="oms-section__container">
       {loading ? (
@@ -45,8 +73,15 @@ const OMS = () => {
           <Toprow
             searchState={searchState}
             handleSearchClick={handleSearchClick}
+            toggleForm={toggleForm}
           />
-          <Data ordersList={ordersList} />
+          <Data
+            ordersList={ordersList}
+            showForm={showForm}
+            handleCancelClick={handleCancelClick}
+            addOrder={addOrder}
+            closeForm={closeForm}
+          />
         </React.Fragment>
       )}
     </main>

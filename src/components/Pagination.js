@@ -1,6 +1,5 @@
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import "./Pagination.css";
-import { ORDERS_PER_PAGE } from "../utils/constants";
 
 const Pagination = ({
   ordersList,
