@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Leftrow from "./Leftrow";
 import Rightrow from "./Rightrow";
@@ -7,7 +7,7 @@ import Pagination from "./Pagination";
 import "./Data.css";
 import { ORDERS_PER_PAGE } from "../utils/constants";
 
-const Data = ({ ordersList }) => {
+const Data = ({ ordersList, loading }) => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 

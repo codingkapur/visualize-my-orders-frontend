@@ -1,6 +1,13 @@
 .oms-section__container {
   background-color: #fff;
 }
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto;
+}
 .toprow__container {
   /* height: 10vh; */
   display: grid;
