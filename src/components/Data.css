@@ -1,6 +1,6 @@
 .data__container {
   display: grid;
-  grid-template-columns: 2fr 7fr;
+  grid-template-columns: 3fr 7fr;
   grid-template-rows: auto 1fr;
   height: 100%;
   position: relative;
@@ -11,21 +11,42 @@
   grid-template-columns: 1fr;
   overflow-x: scroll;
 }
+.data__container--left {
+  border-right: 1px solid #123;
+
+}
 .heading__row--left,
 .data__row--left {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 6fr 1.3fr;
   align-items: center;
-  border-right: 1px solid #123;
   border-bottom: 1px solid #123;
+  padding: 0 1rem;
 }
+
 .heading__row--right,
 .data__row--right {
   display: grid;
-  grid-template-columns: repeat(5, 200px) 400px 200px;
+  grid-template-columns: repeat(5, 200px) 400px 200px 200px;
   align-items: center;
   border-bottom: 1px solid #123;
 }
+.operations__container {
+  display: flex;
+  justify-content: space-between;
+}
+.operation__icon {
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1.2rem;
+}
+.operation__icon:hover {
+  transform: scale(1.1);
+}
+.operation__icon:active {
+  transform: scale(0.99);
+}
+
 .heading__row--left, .heading__row--right {
     background-color: rgba(192, 192, 192, 0.364);
     font-weight: 700;
@@ -33,7 +54,6 @@
 .user--data__item {
   text-align: center;
   padding: 1rem 0;
-  border-right: 1px solid #123;
   overflow-y: scroll;
 }
 .input__checkbox {

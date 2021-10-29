@@ -8,6 +8,8 @@ const Rightrow = ({ order }) => {
       <p className="row__user--source user--data__item">{order.source}</p>
       <p className="row__user--address user--data__item">{order.address}</p>
       <p className="row__user--phone user--data__item">{order.phone}</p>
+      <p className="row__user--email user--data__item">{order.email}</p>
+
     </div>
   );
 };

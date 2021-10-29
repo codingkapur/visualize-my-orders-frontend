@@ -8,7 +8,7 @@ import Pagination from "./Pagination";
 import "./Data.css";
 import { ORDERS_PER_PAGE } from "../utils/constants";
 
-const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm}) => {
+const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm, handleDeleteClick}) => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
@@ -33,6 +33,7 @@ const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm}) =
     }
   };
   
+  
   return (
     <div className="data__container">
       {showForm? <Modal handleCancelClick={handleCancelClick} addOrder={addOrder} closeForm={closeForm}/> :''}
@@ -42,7 +43,7 @@ const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm}) =
           <p className="row__user--name user--data__item">Name</p>
         </div>
         {ordersOnPage.map((order) => {
-          return <Leftrow order={order} key={order._id} />;
+          return <Leftrow order={order} key={order._id} handleDeleteClick={handleDeleteClick}/>;
         })}
       </div>
       <div className="data__container--right">
@@ -54,6 +55,8 @@ const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm}) =
           <p className="row__user--source user--data__item">Source</p>
           <p className="row__user--address user--data__item">Address</p>
           <p className="row__user--phone user--data__item">Phone</p>
+        <p className="row__user--phone user--data__item">Email</p>
+
         </div>
         {ordersOnPage.map((order) => {
           return <Rightrow order={order} key={order._id} />;

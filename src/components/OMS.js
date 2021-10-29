@@ -63,6 +63,12 @@ const OMS = () => {
       console.log(error);
     }
   };
+  const handleDeleteClick = async (order) => {
+    const res = await fetch(`http://localhost:5000/orders/${order._id}`, {
+      method: 'DELETE'
+    })
+    setOrdersList(ordersList.filter(o=> o._id !== order._id));
+  }
 
   return (
     <main className="oms-section__container">
@@ -81,6 +87,7 @@ const OMS = () => {
             handleCancelClick={handleCancelClick}
             addOrder={addOrder}
             closeForm={closeForm}
+            handleDeleteClick={handleDeleteClick}
           />
         </React.Fragment>
       )}

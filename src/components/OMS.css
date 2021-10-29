@@ -27,8 +27,9 @@
 
 }
 .searchbar__form {
+  padding-left: 1rem;
   display: grid;
-  grid-template-columns: 1.5fr 5fr;
+  grid-template-columns: 1.3fr 5fr;
   align-items: center;
   /* border: 1px solid #123; */
   width: 45%;
