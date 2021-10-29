@@ -6,7 +6,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.775);
+  background-color: rgba(0, 0, 0, 0.515);
   box-shadow: 0 1px 10px rgba(158, 158, 158, 0.255);
 }
 .logo {

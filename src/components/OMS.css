@@ -1,5 +1,6 @@
 .oms-section__container {
   background-color: #fff;
+  /* height: 100vh; */
 }
 .loading {
   display: flex;
