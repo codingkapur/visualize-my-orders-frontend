@@ -39,7 +39,7 @@ const OMS = () => {
 
   //Toggle Add Order Form
   const toggleForm = () => {
-    setShowForm(!showForm);
+    setShowForm(true);
   };
   const handleCancelClick = () => {
     setShowForm(false);

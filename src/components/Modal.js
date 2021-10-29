@@ -135,7 +135,7 @@ const Modal = ({ handleCancelClick, create, addOrder, closeForm }) => {
         <div className="form-control">
           <label>E-Mail:</label>
           <input
-          name="email"
+            name="email"
             value={email}
             required
             type="text"

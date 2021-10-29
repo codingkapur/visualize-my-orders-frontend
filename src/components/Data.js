@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import Modal from './Modal';
+import ModalOverlay from './ModalOverlay';
+import Modal from "./Modal";
 import Leftrow from "./Leftrow";
 import Rightrow from "./Rightrow";
 import Pagination from "./Pagination";
@@ -8,7 +9,14 @@ import Pagination from "./Pagination";
 import "./Data.css";
 import { ORDERS_PER_PAGE } from "../utils/constants";
 
-const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm, handleDeleteClick}) => {
+const Data = ({
+  ordersList,
+  showForm,
+  handleCancelClick,
+  addOrder,
+  closeForm,
+  handleDeleteClick,
+}) => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
@@ -20,7 +28,7 @@ const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm, ha
 
   useEffect(() => {
     setTotalPages(Math.ceil(ordersList.length / ORDERS_PER_PAGE));
-  },[totalPages, ordersList]);
+  }, [totalPages, ordersList]);
 
   const handleLeftClick = () => {
     if (page > 1) {
@@ -32,18 +40,34 @@ const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm, ha
       setPage(page + 1);
     }
   };
-  
-  
+
   return (
     <div className="data__container">
-      {showForm? <Modal handleCancelClick={handleCancelClick} addOrder={addOrder} closeForm={closeForm}/> :''}
+      {showForm ? (
+        <React.Fragment>
+          <ModalOverlay />
+          <Modal
+            handleCancelClick={handleCancelClick}
+            addOrder={addOrder}
+            closeForm={closeForm}
+          />
+        </React.Fragment>
+      ) : (
+        ""
+      )}
       <div className="data__container--left">
         <div className="heading__row--left">
           <input type="checkbox" className="input__checkbox user--data__item" />
-          <p className="row__user--name user--data__item">Name</p>
+          <p className="row__user--name ">Name</p>
         </div>
         {ordersOnPage.map((order) => {
-          return <Leftrow order={order} key={order._id} handleDeleteClick={handleDeleteClick}/>;
+          return (
+            <Leftrow
+              order={order}
+              key={order._id}
+              handleDeleteClick={handleDeleteClick}
+            />
+          );
         })}
       </div>
       <div className="data__container--right">
@@ -55,8 +79,7 @@ const Data = ({ ordersList, showForm, handleCancelClick, addOrder, closeForm, ha
           <p className="row__user--source user--data__item">Source</p>
           <p className="row__user--address user--data__item">Address</p>
           <p className="row__user--phone user--data__item">Phone</p>
-        <p className="row__user--phone user--data__item">Email</p>
-
+          <p className="row__user--phone user--data__item">Email</p>
         </div>
         {ordersOnPage.map((order) => {
           return <Rightrow order={order} key={order._id} />;

@@ -4,7 +4,7 @@ const Leftrow = ({ order , handleDeleteClick}) => {
   return (
     <div className="data__row--left">
       <input type="checkbox" className="input__checkbox user--data__item" />
-      <p className="row__user--name user--data__item">{order.name}</p>
+      <p className="row__user--name ">{order.name}</p>
       <div className="operations__container">
         <BsFillTrashFill className="operation__icon delete__icon" onClick = {()=> handleDeleteClick(order)}/>
         <AiFillEdit className="operation__icon delete__icon"/>
