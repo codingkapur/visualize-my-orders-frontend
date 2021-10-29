@@ -1,1 +1,1 @@
-export const ORDERS_PER_PAGE = 30;
+export const ORDERS_PER_PAGE = 10;
