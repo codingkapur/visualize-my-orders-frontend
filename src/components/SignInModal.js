@@ -1,9 +1,12 @@
+import { FiX } from "react-icons/fi";
+
 import "./SignInModal.css";
 
 const SignInModal = () => {
   return (
     <div className="modal sign-in-modal">
-      <i className="ion-ios-close close-modal-x"></i>
+      <FiX className="close-modal-x" />
+
       <div className="modal-form">
         <h1>Sign In</h1>
         <form className="modal-form">

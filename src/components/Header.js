@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Header.css";
 
-const Header = ({ userSignedIn, onSignInClick, onSignOutClick }) => {
+const Header = ({ userSignedIn, onSignInClick, onSignOutClick,onSignUpClick }) => {
   return (
     <header className="header__container">
       <p className="logo">Orders Management System</p>
@@ -19,7 +19,7 @@ const Header = ({ userSignedIn, onSignInClick, onSignOutClick }) => {
             <p className="header__btn sign-in__btn btn" onClick={onSignInClick}>
               Sign In
             </p>
-            <p className="header__btn sign-up__btn btn">Sign Up</p>
+            <p className="header__btn sign-up__btn btn" onClick={()=>onSignUpClick()}>Sign Up</p>
           </React.Fragment>
         )}
       </div>
