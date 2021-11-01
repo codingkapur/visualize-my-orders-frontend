@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import './Modal.css'
+
 const Modal = ({ handleCancelClick, create, addOrder, closeForm }) => {
   const [name, setName] = useState("");
   const [item, setItem] = useState("");
