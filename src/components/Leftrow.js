@@ -1,4 +1,4 @@
-import { BsThreeDots, BsFillTrashFill } from "react-icons/bs";
+import { BsFillTrashFill } from "react-icons/bs";
 import {AiFillEdit} from 'react-icons/ai'
 const Leftrow = ({ order , handleDeleteClick}) => {
   return (

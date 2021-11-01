@@ -11,6 +11,9 @@ const OMS = () => {
   const [ordersList, setOrdersList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
+
+  const [searchField, setSearchField] = useState("");
+  const [searchResults, setSearchResults] = useState(null);
   //FUNCTIONS
   //Load Orders
   useEffect(() => {
@@ -22,6 +25,9 @@ const OMS = () => {
     };
     updateOrders();
   }, []);
+  useEffect(() => {
+    setSearchResults(null);
+  }, [searchState]);
   //Fetch Orders from database
   const fetchOrders = async () => {
     try {
@@ -35,6 +41,20 @@ const OMS = () => {
   //Search Icon Click Functionality
   const handleSearchClick = () => {
     setSearchState(!searchState);
+    setSearchField("");
+  };
+
+  const getSearchText = (e) => {
+    setSearchField(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    const searchVariable = searchField;
+    setSearchField("");
+
+    setSearchResults(ordersList.filter((x) => x.name.includes(searchVariable)));
   };
 
   //Toggle Add Order Form
@@ -64,11 +84,11 @@ const OMS = () => {
     }
   };
   const handleDeleteClick = async (order) => {
-    const res = await fetch(`http://localhost:5000/orders/${order._id}`, {
-      method: 'DELETE'
-    })
-    setOrdersList(ordersList.filter(o=> o._id !== order._id));
-  }
+    await fetch(`http://localhost:5000/orders/${order._id}`, {
+      method: "DELETE",
+    });
+    setOrdersList(ordersList.filter((o) => o._id !== order._id));
+  };
 
   return (
     <main className="oms-section__container">
@@ -80,9 +100,12 @@ const OMS = () => {
             searchState={searchState}
             handleSearchClick={handleSearchClick}
             toggleForm={toggleForm}
+            handleSearchSubmit={handleSearchSubmit}
+            getSearchText={getSearchText}
+            searchField={searchField}
           />
           <Data
-            ordersList={ordersList}
+            ordersList={searchResults ? searchResults : ordersList}
             showForm={showForm}
             handleCancelClick={handleCancelClick}
             addOrder={addOrder}
