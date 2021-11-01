@@ -4,10 +4,10 @@ import './Modal.css'
 
 const Modal = ({ handleCancelClick, create, addOrder, closeForm }) => {
   const [name, setName] = useState("");
-  const [item, setItem] = useState("");
-  const [delivery_status, setDeliveryStatus] = useState("");
-  const [payment_status, setPaymentStatus] = useState("");
-  const [source, setSource] = useState("");
+  const [item, setItem] = useState("Select Item");
+  const [delivery_status, setDeliveryStatus] = useState("Select Delivery Status");
+  const [payment_status, setPaymentStatus] = useState("Select Payment Status");
+  const [source, setSource] = useState("Select Source");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -27,10 +27,10 @@ const Modal = ({ handleCancelClick, create, addOrder, closeForm }) => {
     });
 
     setName("");
-    setItem("");
-    setDeliveryStatus("");
-    setPaymentStatus("");
-    setSource("");
+    setItem("Select Item");
+    setDeliveryStatus("Select Delivery Status");
+    setPaymentStatus("Select Payment Status");
+    setSource("Select Source");
     setAddress("");
     setPhone("");
     setEmail("");
@@ -62,7 +62,7 @@ const Modal = ({ handleCancelClick, create, addOrder, closeForm }) => {
             name="item"
             onChange={(e) => setItem(e.target.value)}
           >
-            <option disabled></option>
+            <option value="Select Item" disabled>Select Item</option>
             <option value="T-Shirt">T-Shirt</option>
             <option value="Shorts">Shorts</option>
             <option value="Pants">Pants</option>
@@ -80,7 +80,7 @@ const Modal = ({ handleCancelClick, create, addOrder, closeForm }) => {
             name="delivery_status"
             onChange={(e) => setDeliveryStatus(e.target.value)}
           >
-            <option disabled></option>
+            <option value="Select Delivery Status" disabled>Select Delivery Status</option>
             <option value="Not Delivered">Not Delivered</option>
             <option value="In Transit">In Transit</option>
             <option value="Delivered">Delivered</option>
@@ -94,7 +94,7 @@ const Modal = ({ handleCancelClick, create, addOrder, closeForm }) => {
             name="payment_status"
             onChange={(e) => setPaymentStatus(e.target.value)}
           >
-            <option disabled></option>
+            <option value="Select Payment Status" disabled>Select Payment Status</option>
             <option value="Paid">Paid</option>
             <option value="On Delivery">On Delivery</option>
           </select>
@@ -107,7 +107,7 @@ const Modal = ({ handleCancelClick, create, addOrder, closeForm }) => {
             name="source"
             onChange={(e) => setSource(e.target.value)}
           >
-            <option disabled></option>
+            <option value="Select Source" disabled>Select Source</option>
             <option value="Manual">Manual</option>
             <option value="Website">Website</option>
           </select>
