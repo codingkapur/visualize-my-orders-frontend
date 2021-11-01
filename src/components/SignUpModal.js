@@ -1,9 +1,9 @@
 import { FiX } from "react-icons/fi";
 
-const SignUpModal = () => {
+const SignUpModal = ({ handleOverlayClick }) => {
   return (
     <div className="modal sign-up-modal">
-      <FiX className="close-modal-x"/>
+      <FiX className="close-modal-x" onClick={()=> handleOverlayClick()} />
       <div className="modal-form">
         <h1>Sign Up</h1>
         <form className="modal-form">
@@ -16,9 +16,7 @@ const SignUpModal = () => {
             />
             <span></span>
 
-            <label className="modal-form-label">
-              First Name:
-            </label>
+            <label className="modal-form-label">First Name:</label>
           </div>
           <div className="modal-form-text-field modal-last-name">
             <input
@@ -29,9 +27,7 @@ const SignUpModal = () => {
             />
             <span></span>
 
-            <label className="modal-form-label">
-              Last Name:
-            </label>
+            <label className="modal-form-label">Last Name:</label>
           </div>
           <div className="modal-form-text-field modal-d-o-b">
             <input
@@ -42,11 +38,13 @@ const SignUpModal = () => {
             />
             <span></span>
 
-            <label className="modal-form-label ">
-              Enter a Pin
-            </label>
+            <label className="modal-form-label ">Enter a Pin</label>
           </div>
-          <button type="submit" className="btn-sign-up btn-form" value="Sign Up">
+          <button
+            type="submit"
+            className="btn-sign-up btn-form"
+            value="Sign Up"
+          >
             Sign Up
           </button>
           <div className="sign-up-form-text-container">

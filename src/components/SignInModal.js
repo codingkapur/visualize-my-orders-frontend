@@ -2,10 +2,10 @@ import { FiX } from "react-icons/fi";
 
 import "./SignInModal.css";
 
-const SignInModal = () => {
+const SignInModal = ({ handleOverlayClick }) => {
   return (
     <div className="modal sign-in-modal">
-      <FiX className="close-modal-x" />
+      <FiX className="close-modal-x" onClick={()=> handleOverlayClick()} />
 
       <div className="modal-form">
         <h1>Sign In</h1>
