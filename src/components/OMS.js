@@ -14,6 +14,7 @@ const OMS = () => {
 
   const [searchField, setSearchField] = useState("");
   const [searchResults, setSearchResults] = useState(null);
+  const [searchResultsPagination, setSearchResultsPagination] = useState(null)
   //FUNCTIONS
   //Load Orders
   useEffect(() => {
@@ -25,9 +26,11 @@ const OMS = () => {
     };
     updateOrders();
   }, []);
+
   useEffect(() => {
     setSearchResults(null);
   }, [searchState]);
+
   //Fetch Orders from database
   const fetchOrders = async () => {
     try {
@@ -53,7 +56,6 @@ const OMS = () => {
 
     const searchVariable = searchField;
     setSearchField("");
-
     setSearchResults(ordersList.filter((x) => x.name.includes(searchVariable)));
   };
 
