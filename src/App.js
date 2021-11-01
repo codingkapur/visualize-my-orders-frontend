@@ -53,8 +53,8 @@ function App() {
       {signUpModalState && (
         <SignInModalOverlay handleOverlayClick={handleOverlayClick} />
       )}
-      {signUpModalState && <SignUpModal handleOverlayClick={handleOverlayClick}/>}
-      {signInModalState && <SignInModal handleOverlayClick={handleOverlayClick}/>}
+      {signUpModalState && <SignUpModal handleOverlayClick={handleOverlayClick} onSignInClick={onSignInClick}/>}
+      {signInModalState && <SignInModal handleOverlayClick={handleOverlayClick} onSignUpClick={onSignUpClick}/>}
       {userSignedIn ? <OMS /> : <HeroSection />}
     </div>
   );

@@ -1,6 +1,8 @@
 import { FiX } from "react-icons/fi";
 
-const SignUpModal = ({ handleOverlayClick }) => {
+const SignUpModal = ({ handleOverlayClick, onSignInClick }) => {
+
+
   return (
     <div className="modal sign-up-modal">
       <FiX className="close-modal-x" onClick={()=> handleOverlayClick()} />
@@ -50,7 +52,7 @@ const SignUpModal = ({ handleOverlayClick }) => {
           <div className="sign-up-form-text-container">
             <p className="sign-up-form-text">
               Already have an account? Sign in
-              <strong className="send-to-sign-in"> here</strong>
+              <strong className="send-to-sign-in" onClick = {()=>onSignInClick()}> here</strong>
             </p>
           </div>
         </form>
