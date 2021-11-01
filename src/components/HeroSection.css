@@ -8,7 +8,7 @@
 }
 .hero__text--container {
     /* border: 1px solid #fff; */
-    width: 90%;
+    width: 60%;
     /* max-width: 750px; */
     height: 100%;
     display: flex;
@@ -20,7 +20,7 @@
 }
 .hero__text--title {
     text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
 }
 
