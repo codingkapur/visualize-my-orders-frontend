@@ -59,6 +59,16 @@
   overflow-y: scroll;
   border-right: 1px solid #123;
 }
+.user--data__item.green {
+  color: rgb(0, 214, 0);
+}
+.user--data__item.red {
+  color: rgb(214, 0, 0);;
+}
+.user--data__item.blue {
+  color: rgb(0, 0, 214);;
+}
+
 .row__user--name {
   /* text-align: center; */
   padding: 1rem 0;
