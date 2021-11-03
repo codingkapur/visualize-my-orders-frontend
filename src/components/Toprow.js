@@ -4,7 +4,10 @@ import { FiChevronDown, FiX } from "react-icons/fi";
 import { useEffect, useRef } from "react";
 
 //Style Import
-import './Toprow.css';
+import "./Toprow.css";
+
+//Component Imports
+import SortOptions from "./SortOptions";
 
 const Toprow = ({
   searchState,
@@ -13,6 +16,8 @@ const Toprow = ({
   handleSearchSubmit,
   getSearchText,
   searchField,
+  handleSortClick,
+  sortOptionsMenu,
 }) => {
   const searchInput = useRef(null);
 
@@ -29,7 +34,11 @@ const Toprow = ({
   };
 
   return (
-    <div className="toprow__container">
+    <div
+      className={
+        sortOptionsMenu ? "toprow__container sort-options" : "toprow__container"
+      }
+    >
       <div className="toprow__searchbar--container">
         <form
           className="searchbar__form"
@@ -59,11 +68,21 @@ const Toprow = ({
         </p>
         <p className="btn edit-order-btn operations-btn">Edit</p>
         <p className="btn delete-order-btn operations-btn">Delete</p>
-        <div className="btn sort__container operations-btn">
+        <div
+          className="btn sort__container operations-btn"
+          onClick={handleSortClick}
+        >
           <p className="sort-orders-btn">Sort</p>
-          <FiChevronDown />
+          <FiChevronDown
+            className={
+              sortOptionsMenu
+                ? "sort__options--icon right"
+                : "sort__options--icon"
+            }
+          />
         </div>
       </div>
+      {sortOptionsMenu && <SortOptions />}
     </div>
   );
 };

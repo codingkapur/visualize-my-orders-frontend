@@ -14,7 +14,8 @@ const OMS = () => {
 
   const [searchField, setSearchField] = useState("");
   const [searchResults, setSearchResults] = useState(null);
-  const [searchResultsPagination, setSearchResultsPagination] = useState(null)
+  const [sortOptionsMenu, setSortOptionsMenu] = useState(false);
+
   //FUNCTIONS
   //Load Orders
   useEffect(() => {
@@ -70,6 +71,7 @@ const OMS = () => {
   const closeForm = (bool) => {
     setShowForm(bool);
   };
+  //ADD AN ORDER
   const addOrder = async (order) => {
     try {
       const res = await fetch("http://localhost:5000/orders", {
@@ -85,12 +87,18 @@ const OMS = () => {
       console.log(error);
     }
   };
+  //DELETE AN ORDER
   const handleDeleteClick = async (order) => {
     await fetch(`http://localhost:5000/orders/${order._id}`, {
       method: "DELETE",
     });
     setOrdersList(ordersList.filter((o) => o._id !== order._id));
   };
+
+  //SORT ORDERS
+  const handleSortClick = () => {
+    setSortOptionsMenu(!sortOptionsMenu);
+  }
 
   return (
     <main className="oms-section__container">
@@ -105,6 +113,8 @@ const OMS = () => {
             handleSearchSubmit={handleSearchSubmit}
             getSearchText={getSearchText}
             searchField={searchField}
+            handleSortClick={handleSortClick}
+            sortOptionsMenu={sortOptionsMenu}
           />
           <Data
             ordersList={searchResults ? searchResults : ordersList}
