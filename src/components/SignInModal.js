@@ -2,7 +2,7 @@ import { FiX } from "react-icons/fi";
 
 import "./SignInModal.css";
 
-const SignInModal = ({ handleOverlayClick, onSignUpClick }) => {
+const SignInModal = ({ handleOverlayClick, onSignUpClick, administerSignIn }) => {
   return (
     <div className="modal sign-in-modal">
       <FiX className="close-modal-x" onClick={()=> handleOverlayClick()} />
@@ -35,7 +35,7 @@ const SignInModal = ({ handleOverlayClick, onSignUpClick }) => {
             <p>Forgot Password?</p>
           </div>
           <div className="btn-sign-in-container">
-            <button className="btn-sign-in btn-form" value="Sign In">
+            <button className="btn-sign-in btn-form" value="Sign In" onClick = {administerSignIn}>
               Sign In
             </button>
             <div className="sign-up-form-text-container">

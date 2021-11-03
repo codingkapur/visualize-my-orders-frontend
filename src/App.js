@@ -15,6 +15,8 @@ function App() {
   const [signInModalState, setSignInModalState] = useState(false);
   const [signUpModalState, setSignUpModalState] = useState(false);
 
+  //FUNCTIONS
+  //MAIN INTERFACE BUTTONS
   const onSignInClick = () => {
     if (signUpModalState) {
       setSignUpModalState(false);
@@ -39,6 +41,11 @@ function App() {
       setSignUpModalState(false);
     }
   };
+  //TEMPORARY SIGN IN FUNCTION
+  const administerSignIn = () => {
+    setUserSignedIn(true);
+    handleOverlayClick();
+  };
   return (
     <div className="app__container">
       <Header
@@ -53,8 +60,19 @@ function App() {
       {signUpModalState && (
         <SignInModalOverlay handleOverlayClick={handleOverlayClick} />
       )}
-      {signUpModalState && <SignUpModal handleOverlayClick={handleOverlayClick} onSignInClick={onSignInClick}/>}
-      {signInModalState && <SignInModal handleOverlayClick={handleOverlayClick} onSignUpClick={onSignUpClick}/>}
+      {signUpModalState && (
+        <SignUpModal
+          handleOverlayClick={handleOverlayClick}
+          onSignInClick={onSignInClick}
+        />
+      )}
+      {signInModalState && (
+        <SignInModal
+          handleOverlayClick={handleOverlayClick}
+          onSignUpClick={onSignUpClick}
+          administerSignIn={administerSignIn}
+        />
+      )}
       {userSignedIn ? <OMS /> : <HeroSection />}
     </div>
   );

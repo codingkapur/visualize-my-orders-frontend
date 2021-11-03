@@ -1,7 +1,11 @@
 //Library imports
 import { BsSearch } from "react-icons/bs";
-import { FiX } from "react-icons/fi";
+import { FiChevronDown, FiX } from "react-icons/fi";
 import { useEffect, useRef } from "react";
+
+//Style Import
+import './Toprow.css';
+
 const Toprow = ({
   searchState,
   handleSearchClick,
@@ -55,7 +59,10 @@ const Toprow = ({
         </p>
         <p className="btn edit-order-btn operations-btn">Edit</p>
         <p className="btn delete-order-btn operations-btn">Delete</p>
-        <p className="btn sort-orders-btn operations-btn">Sort</p>
+        <div className="btn sort__container operations-btn">
+          <p className="sort-orders-btn">Sort</p>
+          <FiChevronDown />
+        </div>
       </div>
     </div>
   );
