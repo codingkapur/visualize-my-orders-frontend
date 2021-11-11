@@ -22,4 +22,4 @@ Prequisites: Node Version 14
 6. Print? Maybe
 
 ------------------------------------------------------------------------------
-
+This application in its current state is a classic example of prop drilling, and other ways in which a react app should not be made. 
